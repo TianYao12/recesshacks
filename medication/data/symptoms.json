@@ -1,0 +1,391 @@
+{
+  "symptoms": [
+    {
+      "name": "Fever",
+      "diseases": [
+        "Common Cold",
+        "Influenza",
+        "COVID-19",
+        "Malaria",
+        "Strep Throat",
+        "Gastroenteritis",
+        "Urinary Tract Infection",
+        "Pneumonia",
+        "Typhoid Fever",
+        "Tuberculosis",
+        "Lyme Disease",
+        "Roseola"
+      ]
+    },
+    {
+      "name": "Cough",
+      "diseases": [
+        "Common Cold",
+        "Influenza",
+        "COVID-19",
+        "Pneumonia",
+        "Bronchitis",
+        "Asthma",
+        "Chronic Obstructive Pulmonary Disease (COPD)",
+        "Lung Cancer",
+        "Tuberculosis",
+        "Whooping Cough",
+        "Gastroesophageal Reflux Disease (GERD)",
+        "Pulmonary Embolism"
+      ]
+    },
+    {
+      "name": "Headache",
+      "diseases": [
+        "Migraine",
+        "Tension Headache",
+        "Sinusitis",
+        "Common Cold",
+        "Influenza",
+        "Cluster Headache",
+        "Temporal Arteritis",
+        "Hypertension",
+        "Stroke",
+        "Brain Tumor",
+        "Concussion",
+        "Glaucoma"
+      ]
+    },
+    {
+      "name": "Sore Throat",
+      "diseases": [
+        "Common Cold",
+        "Strep Throat",
+        "Influenza",
+        "Tonsillitis",
+        "Mononucleosis",
+        "Laryngitis",
+        "GERD",
+        "Diphtheria",
+        "Scarlet Fever",
+        "Pharyngitis",
+        "Thyroiditis",
+        "Measles"
+      ]
+    },
+    {
+      "name": "Fatigue",
+      "diseases": [
+        "Common Cold",
+        "Anemia",
+        "Mononucleosis",
+        "Chronic Fatigue Syndrome",
+        "Depression",
+        "Hypothyroidism",
+        "Fibromyalgia",
+        "Sleep Apnea",
+        "Multiple Sclerosis",
+        "Diabetes",
+        "Rheumatoid Arthritis",
+        "Heart Failure",
+        "Celiac Disease"
+      ]
+    },
+    {
+      "name": "Shortness of Breath",
+      "diseases": [
+        "Common Cold",
+        "Asthma",
+        "Chronic Obstructive Pulmonary Disease (COPD)",
+        "Pneumonia",
+        "Heart Failure",
+        "Anemia",
+        "Pulmonary Embolism",
+        "Lung Cancer",
+        "Pulmonary Hypertension",
+        "Bronchitis",
+        "Interstitial Lung Disease",
+        "Acute Respiratory Distress Syndrome (ARDS)",
+        "Myocardial Infarction"
+      ]
+    },
+    {
+      "name": "Nausea",
+      "diseases": [
+        "Common Cold",
+        "Gastroenteritis",
+        "Food Poisoning",
+        "Morning Sickness",
+        "Migraine",
+        "Viral Hepatitis",
+        "Peptic Ulcer Disease",
+        "Appendicitis",
+        "Pancreatitis",
+        "Gallstones",
+        "Gastroesophageal Reflux Disease (GERD)",
+        "Pregnancy",
+        "Influenza"
+      ]
+    },
+    {
+      "name": "Abdominal Pain",
+      "diseases": [
+        "Common Cold",
+        "Appendicitis",
+        "Gallstones",
+        "Peptic Ulcer Disease",
+        "Gastroenteritis",
+        "Diverticulitis",
+        "Crohn's Disease",
+        "Ulcerative Colitis",
+        "Kidney Stones",
+        "Pancreatitis",
+        "Hernia",
+        "Urinary Tract Infection",
+        "Ectopic Pregnancy"
+      ]
+    },
+    {
+      "name": "Rash",
+      "diseases": [
+        "Common Cold",
+        "Contact Dermatitis",
+        "Eczema",
+        "Psoriasis",
+        "Allergic Reaction",
+        "Scabies",
+        "Ringworm",
+        "Measles",
+        "Chickenpox",
+        "Lupus",
+        "Rosacea",
+        "Fifth Disease",
+        "Hives"
+      ]
+    },
+    {
+      "name": "Dizziness",
+      "diseases": [
+        "Common Cold",
+        "Vertigo",
+        "Orthostatic Hypotension",
+        "Benign Paroxysmal Positional Vertigo (BPPV)",
+        "Meniere's Disease",
+        "Migraine",
+        "Anxiety",
+        "Dehydration",
+        "Inner Ear Infection",
+        "Low Blood Sugar",
+        "Multiple Sclerosis",
+        "Hypotension",
+        "Iron Deficiency Anemia"
+      ]
+    },
+    {
+      "name": "Vomiting",
+      "diseases": [
+        "Common Cold",
+        "Gastroenteritis",
+        "Food Poisoning",
+        "Morning Sickness",
+        "Migraine",
+        "Appendicitis",
+        "Peptic Ulcer Disease",
+        "Pancreatitis",
+        "Gallstones",
+        "Motion Sickness",
+        "Cholecystitis",
+        "Cholangitis",
+        "Bulimia Nervosa"
+      ]
+    },
+    {
+      "name": "Diarrhea",
+      "diseases": [
+        "Common Cold",
+        "Gastroenteritis",
+        "Food Poisoning",
+        "Irritable Bowel Syndrome (IBS)",
+        "Inflammatory Bowel Disease (IBD)",
+        "Lactose Intolerance",
+        "Celiac Disease",
+        "Traveler's Diarrhea",
+        "Norovirus",
+        "Rotavirus",
+        "Salmonellosis",
+        "Campylobacteriosis",
+        "Cholera"
+      ]
+    },
+    {
+      "name": "Joint Pain",
+      "diseases": [
+        "Common Cold",
+        "Osteoarthritis",
+        "Rheumatoid Arthritis",
+        "Gout",
+        "Lupus",
+        "Fibromyalgia",
+        "Bursitis",
+        "Tendinitis",
+        "Ankylosing Spondylitis",
+        "Psoriatic Arthritis",
+        "Reactive Arthritis",
+        "Juvenile Idiopathic Arthritis",
+        "Infectious Arthritis"
+      ]
+    },
+    {
+      "name": "Chest Pain",
+      "diseases": [
+        "Common Cold",
+        "Heart Attack",
+        "Angina",
+        "Gastroesophageal Reflux Disease (GERD)",
+        "Pleurisy",
+        "Pulmonary Embolism",
+        "Pericarditis",
+        "Aortic Dissection",
+        "Musculoskeletal Pain",
+        "Costochondritis",
+        "Pancreatitis",
+        "Esophagitis",
+        "Panic Attack"
+      ]
+    },
+    {
+      "name": "Swelling",
+      "diseases": [
+        "Common Cold",
+        "Edema",
+        "Lymphedema",
+        "Heart Failure",
+        "Kidney Disease",
+        "Liver Disease",
+        "Allergic Reaction",
+        "Venous Insufficiency",
+        "Pregnancy",
+        "Hypothyroidism",
+        "Arthritis",
+        "Infection",
+        "Deep Vein Thrombosis (DVT)"
+      ]
+    },
+    {
+      "name": "Blurred Vision",
+      "diseases": [
+        "Common Cold",
+        "Myopia",
+        "Hyperopia",
+        "Astigmatism",
+        "Presbyopia",
+        "Cataracts",
+        "Glaucoma",
+        "Diabetic Retinopathy",
+        "Macular Degeneration",
+        "Retinal Detachment",
+        "Optic Neuritis",
+        "Migraine",
+        "Hypertension"
+      ]
+    },
+    {
+      "name": "Muscle Weakness",
+      "diseases": [
+        "Common Cold",
+        "Muscular Dystrophy",
+        "Myasthenia Gravis",
+        "Lambert-Eaton Syndrome",
+        "Amyotrophic Lateral Sclerosis (ALS)",
+        "Multiple Sclerosis",
+        "Guillain-Barre Syndrome",
+        "Hypothyroidism",
+        "Polymyositis",
+        "Dermatomyositis",
+        "Fibromyalgia",
+        "Diabetes",
+        "Rhabdomyolysis"
+      ]
+    },
+    {
+      "name": "Urinary Frequency",
+      "diseases": [
+        "Common Cold",
+        "Urinary Tract Infection",
+        "Diabetes",
+        "Enlarged Prostate",
+        "Interstitial Cystitis",
+        "Overactive Bladder",
+        "Bladder Infection",
+        "Bladder Cancer",
+        "Kidney Stones",
+        "Pregnancy",
+        "Stress",
+        "Anxiety",
+        "Neurological Disorders"
+      ]
+    },
+    {
+      "name": "Nasal Congestion",
+      "diseases": [
+        "Common Cold",
+        "Allergic Rhinitis",
+        "Sinusitis",
+        "Influenza",
+        "COVID-19",
+        "Hay Fever",
+        "Nasal Polyps",
+        "Environmental Irritants",
+        "Deviated Septum",
+        "Respiratory Infections",
+        "Asthma",
+        "Bronchitis"
+      ]
+    },
+    {
+      "name": "Muscle Aches",
+      "diseases": [
+        "Influenza",
+        "COVID-19",
+        "Fibromyalgia",
+        "Lupus",
+        "Polymyalgia Rheumatica",
+        "Rheumatoid Arthritis",
+        "Hypothyroidism",
+        "Chronic Fatigue Syndrome",
+        "Viral Infections",
+        "Mononucleosis",
+        "Lyme Disease",
+        "Muscle Strain"
+      ]
+    },
+    {
+      "name": "Stomach Cramps",
+      "diseases": [
+        "Gastroenteritis",
+        "Irritable Bowel Syndrome (IBS)",
+        "Menstrual Cramps",
+        "Food Poisoning",
+        "Indigestion",
+        "Gas and Bloating",
+        "Gallstones",
+        "Peptic Ulcer Disease",
+        "Crohn's Disease",
+        "Diverticulitis",
+        "Appendicitis",
+        "Endometriosis"
+      ]
+    },
+    {
+      "name": "Chest Tightness",
+      "diseases": [
+        "Asthma",
+        "Pneumonia",
+        "Pulmonary Embolism",
+        "Gastroesophageal Reflux Disease (GERD)",
+        "Anxiety",
+        "Heart Attack",
+        "Angina",
+        "Costochondritis",
+        "Musculoskeletal Pain",
+        "Pancreatitis",
+        "Lung Conditions"
+      ]
+    }
+  ]
+}
