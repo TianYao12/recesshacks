@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import styles from "@/styles/Home.module.css";
 import symptomsData from "../data/symptoms.json";
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Home() {
   const [selectedSymptom, setSelectedSymptom] = useState("");
@@ -26,11 +26,11 @@ export default function Home() {
         newHashMap[disease] = newHashMap[disease] ? newHashMap[disease] + 1 : 1;
       }
     }
-  
+
     const sortedDiseases = Object.entries(newHashMap)
       .sort((a, b) => b[1] - a[1])
       .map(([disease, _]) => disease);
-  
+
     for (const disease of sortedDiseases) {
       console.log(`${disease} has ${newHashMap[disease]} instances`);
       diseases.push(disease);
@@ -80,9 +80,11 @@ export default function Home() {
       </div>
       <div>
         {diseases.map((disease, index) => (
-          <div key={index}>
-            <h3>{disease}</h3>
-          </div>
+          <Link href={`/medications/${disease}`}>
+            <div key={index}>
+              <h3>{disease}</h3>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
