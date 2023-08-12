@@ -89,7 +89,6 @@ body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
-      transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
@@ -140,4 +139,11 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.overallmargin {
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
