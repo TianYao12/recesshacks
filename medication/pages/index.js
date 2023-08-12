@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import styles from "@/styles/Home.module.css";
 import symptomsData from "../data/symptoms.json";
+import Link from 'next/link';
 
 export default function Home() {
   const [selectedSymptom, setSelectedSymptom] = useState("");
@@ -38,7 +39,7 @@ export default function Home() {
   };
 
   const handleAddSymptom = () => {
-    if (symptoms[symptoms.length - 1] !== selectedSymptom) {
+    if (!symptoms.includes(selectedSymptom)) {
       setSymptoms([...symptoms, selectedSymptom]);
     }
     console.log(symptoms);
@@ -46,6 +47,7 @@ export default function Home() {
 
   const clearSymptoms = () => {
     setSymptoms([]);
+    setDiseases([]);
   };
 
   return (
