@@ -135,6 +135,7 @@ a {
 .history-button:hover {
   background-color: #0056b3;
 }
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
