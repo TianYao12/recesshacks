@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <>
     <h1>Testing title</h1>
-    <Image src={Logo} width={100} height={100} alt="logo" />
     </>
   );
 }
