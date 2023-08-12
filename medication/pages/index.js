@@ -59,17 +59,18 @@ export default function Home() {
         id="symptomDropdown"
         value={selectedSymptom}
         onChange={handleSymptomChange}
+        className={styles.select}
       >
-        <option value="">Select a symptom...</option>
+        <option value="">Select...</option>
         {symptomsData.symptoms.map((symptom, index) => (
           <option key={index} value={symptom.name}>
             {symptom.name}
           </option>
         ))}
       </select>
-      <button onClick={handleAddSymptom}>Add</button>
-      <button onClick={handleAnalyze}>Analyze</button>
-      <button onClick={clearSymptoms}>Clear</button>
+      <button onClick={handleAddSymptom} className={styles.buttonstyles}>Add</button>
+      <button onClick={handleAnalyze} className={styles.buttonstyles}>Analyze</button>
+      <button onClick={clearSymptoms} className={styles.buttonstyles}>Clear</button>
 
       <div>
         {symptoms.map((symptom, index) => (
