@@ -10,7 +10,9 @@ export default function App({
     <>
       <SessionProvider session={session}>
         <Navbar />
+        <div className="overallmargin">
         <Component {...pageProps} />
+        </div>
       </SessionProvider>
     </>
   );
