@@ -15,11 +15,6 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="navbar-container">
-        <Link className="history-button" href="/history">
-          History
-        </Link>
-      </div>
-      <div className="navbar-container">
         <Link className="history-button" href="/api/auth/signin">
           <span
             onClick={(e) => {
@@ -45,6 +40,14 @@ export default function Navbar() {
       </div>
       {status === "authenticated" && (
         <>
+          <div className="navbar-container">
+            <Link
+              className="history-button"
+              href={`/history/${session.user.id}`}
+            >
+              History
+            </Link>
+          </div>
           <div className="navbar-container">
             <Link className="history-button" href="/">
               {session.user.email}

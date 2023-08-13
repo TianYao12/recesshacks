@@ -9,14 +9,12 @@ const historySchema = new Schema(
             month: Number,
             day: String,
             hour: String,
-            minute: String,
-            seconds: String,
         }
     }, {
         timestamps: true,
     }
 )
 
-const Topic = mongoose.models.Topic || mongoose.model("Topic", historySchema);
+const MedTopic = mongoose.models.MedTopic || mongoose.model("MedTopic", historySchema);
 
-export default Topic;
+export default MedTopic;
