@@ -21,6 +21,25 @@ export default function Tracking() {
     console.log(data);
   };
 
+  const handleDelete = async (commentId) => {
+    try {
+      const session = await getSession();
+      const userID = session.user.id;
+      const response = await fetch(`/api/comments/${commentId}`, {
+        method: "DELETE",
+        body: JSON.stringify({commentId}),
+        headers:  {
+          "Content-Type": "application/json",
+        }
+      })
+      if(response.ok) {
+        fetchDiseases();
+      }
+    } catch(error) {
+      console.error("Error when deleting", error);
+    }
+  }
+
   return (
     <>
       <h1>Testing</h1>
@@ -31,6 +50,7 @@ export default function Tracking() {
             <p>
               Date: {comment.date.month}/{comment.date.day}/{comment.date.hour}
             </p>
+            <button onClick={() => handleDelete(comment.id)}>Delete</button>
           </div>
         ))}
     </>
