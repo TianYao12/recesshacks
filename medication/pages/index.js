@@ -3,14 +3,56 @@ import { useState } from "react";
 import styles from "@/styles/Home.module.css";
 import symptomsData from "../data/symptoms.json";
 import Link from "next/link";
+import { useSession, getSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const { data: session, status } = useSession();
   const [selectedSymptom, setSelectedSymptom] = useState("");
   const [symptoms, setSymptoms] = useState([]);
   const [diseases, setDiseases] = useState([]);
 
   const handleSymptomChange = (e) => {
     setSelectedSymptom(e.target.value);
+  };
+
+  const handlePost = async (disease) => {
+    const current = new Date();
+    const temp_month = current.getMonth();
+    const temp_day = current.getDate();
+    const temp_hour = current.getHours();
+    const now = {
+      temp_month,
+      temp_day,
+      temp_hour,
+    };
+
+    try {
+      const userSession = await getSession();
+      console.log(userSession);
+
+      const userID = userSession.user.id;
+
+      const commentData = {
+        disease,
+        now,
+        userID,
+      };
+
+      const response = await fetch("/api/comments", {
+        method: "POST",
+        body: JSON.stringify({ commentData }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!response.ok) {
+        console.error("Failed to save comment");
+      }
+    } catch (error) {
+      console.error("Error fetching session: ", error);
+    }
   };
 
   const handleAnalyze = () => {
@@ -89,13 +131,14 @@ export default function Home() {
       </div>
       <div style={{marginTop:"10px"}}>
         {diseases.map((disease, index) => (
-          <Link href={`/medications/${disease}`}>
-            <div key={index}>
-              <h3>
-                Disease cause {index + 1}: {disease}
-              </h3>
-            </div>
-          </Link>
+          <div key={index}>
+            <Link href={`/medications/${disease}`}>
+              <h3>{disease}</h3>
+            </Link>
+            <button onClick={async () => await handlePost(disease)}>
+              Add to history
+            </button>
+          </div>
         ))}
       </div>
     </div>
