@@ -95,32 +95,41 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Symptom Analyzer</h1>
-
-      <label htmlFor="symptomDropdown">Select a Symptom:</label>
+      <label htmlFor="symptomDropdown" style={{ fontSize: "20px" }}>
+        Select a Symptom:
+      </label>
       <select
         id="symptomDropdown"
         value={selectedSymptom}
         onChange={handleSymptomChange}
+        className={styles.select}
       >
-        <option value="">Select a symptom...</option>
+        <option value="">Select...</option>
         {symptomsData.symptoms.map((symptom, index) => (
           <option key={index} value={symptom.name}>
             {symptom.name}
           </option>
         ))}
       </select>
-      <button onClick={handleAddSymptom}>Add</button>
-      <button onClick={handleAnalyze}>Analyze</button>
-      <button onClick={clearSymptoms}>Clear</button>
+      <button onClick={handleAddSymptom} className={styles.buttonstyles}>
+        Add
+      </button>
+      <button onClick={handleAnalyze} className={styles.buttonstyles}>
+        Analyze
+      </button>
+      <button onClick={clearSymptoms} className={styles.buttonstyles}>
+        Clear
+      </button>
 
       <div>
+        {symptoms.length > 0 && <h2 style={{margin:"10px 0px 10px 0px"}}>These are your symptom(s):</h2>}
         {symptoms.map((symptom, index) => (
           <div key={index}>
-            <h1>{symptom}</h1>
+            <h2>{symptom}</h2>
           </div>
         ))}
       </div>
-      <div>
+      <div style={{marginTop:"10px"}}>
         {diseases.map((disease, index) => (
           <div key={index}>
             <Link href={`/medications/${disease}`}>
