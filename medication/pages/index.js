@@ -80,14 +80,14 @@ export default function Home() {
       </button>
 
       <div>
-        {symptoms.length > 0 && <h2>These are your symptom(s):</h2>}
+        {symptoms.length > 0 && <h2 style={{margin:"10px 0px 10px 0px"}}>These are your symptom(s):</h2>}
         {symptoms.map((symptom, index) => (
-          <div key={index} style={{ marginBottom: "20px" }}>
+          <div key={index}>
             <h2>{symptom}</h2>
           </div>
         ))}
       </div>
-      <div>
+      <div style={{marginTop:"10px"}}>
         {diseases.map((disease, index) => (
           <Link href={`/medications/${disease}`}>
             <div key={index}>
