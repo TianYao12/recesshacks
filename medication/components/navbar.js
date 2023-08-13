@@ -20,8 +20,8 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="navbar-container">
-        <Link className="history-button" href="/history">
-          History
+        <Link className="history-button" href="/tracking">
+          Tracking
         </Link>
       </div>
       <div className="navbar-container">
