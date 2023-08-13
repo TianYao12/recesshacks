@@ -53,8 +53,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Symptom Analyzer</h1>
-
-      <label htmlFor="symptomDropdown">Select a Symptom:</label>
+      <label htmlFor="symptomDropdown" style={{fontSize:"20px"}}>Select a Symptom:</label>
       <select
         id="symptomDropdown"
         value={selectedSymptom}
