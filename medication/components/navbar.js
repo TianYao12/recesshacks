@@ -7,11 +7,6 @@ import { signIn, signOut, useSession } from "next-auth/react";
 export default function Navbar() {
   const { data: session, status } = useSession();
 
-  const handleSignOut = async () => {
-    window.location.replace("index.js");
-    await signOut();
-  };
-
   return (
     <div className="navbar">
       <div className="navbar-logo-container">
@@ -41,7 +36,7 @@ export default function Navbar() {
           <span
             onClick={(e) => {
               e.stopPropagation();
-              handleSignOut();
+              signOut();
             }}
           >
             Sign Out
