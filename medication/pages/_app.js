@@ -1,5 +1,5 @@
-import "../styles/globals.css";
-import Navbar from "../components/navbar";
+import "@/styles/globals.scss";
+import Navbar from "../components/navbar.js";
 import { SessionProvider } from "next-auth/react";
 
 export default function App({
@@ -15,12 +15,3 @@ export default function App({
     </>
   );
 }
-
-// export default function App({ Component, pageProps }) {
-//   return(
-//     <>
-//     <Navbar />
-//      <Component {...pageProps} />
-//     </>
-//   )
-// }

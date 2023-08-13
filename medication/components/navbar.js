@@ -1,7 +1,8 @@
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Logo from "public/logo.png";
 import Image from "next/image";
-import {signIn, signOut, useSession} from "next-auth/react";
+import Logo from "public/logo.png";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function Navbar() {
   const {data: session, status} = useSession();
@@ -9,7 +10,7 @@ export default function Navbar() {
   const handleSignOut = async () => {
     window.location.replace("index.js");
     await signOut();
-  }
+  };
 
   return (
     <div className="navbar">
