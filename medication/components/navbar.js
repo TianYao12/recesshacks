@@ -1,8 +1,17 @@
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Logo from "public/logo.png";
 import Image from "next/image";
+import Logo from "public/logo.png";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function Navbar() {
+  const {data: session, status} = useSession();
+  
+  const handleSignOut = async () => {
+    window.location.replace("index.js");
+    await signOut();
+  };
+
   return (
     <div className="navbar">
       <div className="navbar-logo-container">
@@ -13,6 +22,23 @@ export default function Navbar() {
       <div className="navbar-container">
         <Link className="history-button" href="/tracking">
           Tracking
+        </Link>
+      </div>
+      <div className="navbar-container">
+        <Link className="history-button" href="/api/auth/signin">
+          <span onClick={(e) => {
+            e.preventDefault();
+            signIn();
+          }}>Sign In</span>
+        </Link>
+      </div>
+      <div className="navbar-container">
+        <Link className="history-button" href="/api/auth/signin">
+          <span onClick={(e) => {
+            e.stopPropagation();
+            handleSignOut();
+            signOut();
+          }}>Sign Out</span>
         </Link>
       </div>
     </div>

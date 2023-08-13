@@ -1,14 +1,17 @@
-import "../styles/globals.css";
-import Navbar from "../components/navbar";
-import styles from "../styles/globals.css";
+import "@/styles/globals.css";
+import Navbar from "../components/navbar.js";
+import { SessionProvider } from "next-auth/react";
 
-export default function App({ Component, pageProps }) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   return (
     <>
-      <Navbar />
-      <div className="overallmargin">
+      <SessionProvider session={session}>
+        <Navbar />
         <Component {...pageProps} />
-      </div>
+      </SessionProvider>
     </>
   );
 }
