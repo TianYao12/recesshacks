@@ -231,7 +231,7 @@
 .select {
   padding:10px 5px 10px 5px;
   margin:10px 10px 10px 10px;
-  background-color:rgb(206, 224, 222);
+  background-color: rgb(230, 171, 255);
   border-radius: 5px;
   border-width: 2px;
   border-color:black
@@ -240,7 +240,7 @@
 .buttonstyles {
   padding:10px 10px 10px 10px;
   margin-right: 10px;
-  background-color:rgb(206, 224, 222);
+  background-color: rgb(230, 171, 255);
   border-radius: 5px;
   border-width: 2px;
   border-color:black;
@@ -249,7 +249,7 @@
 }
 
 .buttonstyles:hover {
-  background-color:rgb(191, 220, 216);
+  background-color: rgb(213, 113, 255);
   opacity: 1.2;
 }
 

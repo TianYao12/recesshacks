@@ -84,6 +84,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
+  background-color: rgb(240, 206, 255);
 }
 
 body {
@@ -101,7 +102,7 @@ a {
 }
 /* Navbar styles */
 .navbar {
-  background-color: #fcfcfc;
+  background-color: rgb(228, 173, 252);
   color: white;
   padding: 1rem;
   display: flex;
@@ -116,8 +117,8 @@ a {
 
 .history-button,
 .home-button {
-  background-color: #007bff;
-  color: white;
+  background-color: rgb(210, 104, 255);
+  color: black;
   border: none;
   padding: 0.5rem 1rem;
   text-align: center;
@@ -126,6 +127,7 @@ a {
   cursor: pointer;
   transition: background-color 0.3s;
   margin-right: 1rem;
+  border-radius: 5px;
 }
 
 .home-button {
@@ -133,7 +135,7 @@ a {
 }
 
 .history-button:hover {
-  background-color: #0056b3;
+  background-color: rgb(193, 49, 255);
 }
 
 @media (prefers-color-scheme: dark) {

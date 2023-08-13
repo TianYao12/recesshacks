@@ -53,7 +53,9 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Symptom Analyzer</h1>
-      <label htmlFor="symptomDropdown" style={{fontSize:"20px"}}>Select a Symptom:</label>
+      <label htmlFor="symptomDropdown" style={{ fontSize: "20px" }}>
+        Select a Symptom:
+      </label>
       <select
         id="symptomDropdown"
         value={selectedSymptom}
@@ -67,14 +69,21 @@ export default function Home() {
           </option>
         ))}
       </select>
-      <button onClick={handleAddSymptom} className={styles.buttonstyles}>Add</button>
-      <button onClick={handleAnalyze} className={styles.buttonstyles}>Analyze</button>
-      <button onClick={clearSymptoms} className={styles.buttonstyles}>Clear</button>
+      <button onClick={handleAddSymptom} className={styles.buttonstyles}>
+        Add
+      </button>
+      <button onClick={handleAnalyze} className={styles.buttonstyles}>
+        Analyze
+      </button>
+      <button onClick={clearSymptoms} className={styles.buttonstyles}>
+        Clear
+      </button>
 
       <div>
+        {symptoms.length > 0 && <h2>These are your symptom(s):</h2>}
         {symptoms.map((symptom, index) => (
-          <div key={index}>
-            <h1>{symptom}</h1>
+          <div key={index} style={{ marginBottom: "20px" }}>
+            <h2>{symptom}</h2>
           </div>
         ))}
       </div>
@@ -82,7 +91,9 @@ export default function Home() {
         {diseases.map((disease, index) => (
           <Link href={`/medications/${disease}`}>
             <div key={index}>
-              <h3>{disease}</h3>
+              <h3>
+                Disease cause {index + 1}: {disease}
+              </h3>
             </div>
           </Link>
         ))}
