@@ -9,43 +9,52 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      <div className="navbar-logo-container">
-        <Link className="home-button" href="/">
-          <Image src={Logo} width={50} height={25} alt="logo" />
-        </Link>
-      </div>
-      <div className="navbar-container">
-        <Link className="history-button" href="/api/auth/signin">
-          <span
-            onClick={(e) => {
-              e.preventDefault();
-              signIn();
-            }}
-          >
-            Sign In
-          </span>
-        </Link>
-      </div>
-      <div className="navbar-container">
-        <Link className="history-button" href="/api/auth/signin">
-          <span
-            onClick={(e) => {
-              e.stopPropagation();
-              signOut();
-            }}
-          >
-            Sign Out
-          </span>
-        </Link>
-      </div>
+      {status != "authenticated" && (
+        <>
+          <div className="navbar-logo-container">
+            <Link className="home-button" href="/">
+              <Image src={Logo} width={50} height={25} alt="logo" />
+            </Link>
+          </div>
+          <div className="navbar-container">
+            <Link className="history-button" href="/api/auth/signin">
+              <span
+                onClick={(e) => {
+                  e.preventDefault();
+                  signIn();
+                }}
+              >
+                Sign In
+              </span>
+            </Link>
+          </div>
+        </>
+      )}
       {status === "authenticated" && (
         <>
+          <div className="navbar-logo-container">
+            <Link className="home-button" href="/">
+              <Image src={Logo} width={50} height={25} alt="logo" />
+            </Link>
+          </div>
           <div className="navbar-container">
             <Link
               className="history-button"
               href={`/history/${session.user.id}`}
             >
               History
+            </Link>
+          </div>
+          <div className="navbar-container">
+            <Link className="history-button" href="/api/auth/signout">
+              <span
+                onClick={(e) => {
+                  e.stopPropagation();
+                  signOut();
+                }}
+              >
+                Sign Out
+              </span>
             </Link>
           </div>
           <div className="navbar-container">

@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { useSession, getSession } from "next-auth/react";
+import {BsTrash3} from 'react-icons/bs'
 
 export default function Tracking() {
   const router = useRouter();
@@ -27,32 +28,38 @@ export default function Tracking() {
       const userID = session.user.id;
       const response = await fetch(`/api/comments/${commentId}`, {
         method: "DELETE",
-        body: JSON.stringify({commentId}),
-        headers:  {
+        body: JSON.stringify({ commentId }),
+        headers: {
           "Content-Type": "application/json",
-        }
-      })
-      if(response.ok) {
+        },
+      });
+      if (response.ok) {
         fetchDiseases();
       }
-    } catch(error) {
+    } catch (error) {
       console.error("Error when deleting", error);
     }
-  }
+  };
 
   return (
     <>
-      <h1>Testing</h1>
-      {client &&
-        comments.map((comment, index) => (
-          <div key={comment.id} index={index}>
-            <h1>{comment.text}</h1>
-            <p>
-              Date: {comment.date.month}/{comment.date.day}/{comment.date.hour}
-            </p>
-            <button onClick={() => handleDelete(comment.id)}>Delete</button>
-          </div>
-        ))}
+      <div className="history-container">
+        <h1 className="history-header">Your History</h1>
+        <p className="para">Keep of your illness for future refrence</p>
+        {client &&
+          comments.map((comment, index) => (
+            <div className="disease-container" key={comment.id} index={index}>
+              <div className="child-container">
+                <h1>{comment.text}</h1>
+                <p>
+                  Date: {comment.date.month}/{comment.date.day}/
+                  {comment.date.hour}
+                </p>
+              </div>
+              <button className="history-btn" onClick={() => handleDelete(comment.id)}><BsTrash3/></button>
+            </div>
+          ))}
+      </div>
     </>
   );
 }
