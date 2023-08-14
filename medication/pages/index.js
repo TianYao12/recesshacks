@@ -1,10 +1,14 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "@/styles/Home.module.css";
 import symptomsData from "../data/symptoms.json";
 import Link from "next/link";
+import Logo from "../public/logo.png";
+import Image from "next/image";
 import { useSession, getSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { AiOutlinePlus } from "react-icons/ai";
+import { BsTrash3 } from "react-icons/bs";
 
 export default function Home() {
   const router = useRouter();
@@ -12,10 +16,41 @@ export default function Home() {
   const [selectedSymptom, setSelectedSymptom] = useState("");
   const [symptoms, setSymptoms] = useState([]);
   const [diseases, setDiseases] = useState([]);
+  const [isAppearActive, setIsAppearActive] = useState(false);
+  const [isButtonActive, setIsButtonActive] = useState(false);
+  const [areDiseasesVisible, setAreDiseasesVisible] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsAppearActive(true);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsButtonActive(true);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const handleSymptomChange = (e) => {
     setSelectedSymptom(e.target.value);
   };
+
+  useEffect(() => {
+    if (isButtonActive) {
+      const diseasesTimeout = setTimeout(() => {
+        setAreDiseasesVisible(true);
+      }, 200); 
+
+      return () => {
+        clearTimeout(diseasesTimeout);
+      };
+    }
+  }, [isButtonActive]);
 
   const handlePost = async (disease) => {
     const current = new Date();
@@ -93,45 +128,55 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Symptom Analyzer</h1>
-      <label htmlFor="symptomDropdown" style={{ fontSize: "20px" }}>
-        Select a Symptom:
-      </label>
-      <select
-        id="symptomDropdown"
-        value={selectedSymptom}
-        onChange={handleSymptomChange}
-        className={styles.select}
-      >
-        <option value="">Select...</option>
-        {symptomsData.symptoms.map((symptom, index) => (
-          <option key={index} value={symptom.name}>
-            {symptom.name}
-          </option>
-        ))}
-      </select>
-      <button onClick={handleAddSymptom} className={styles.buttonstyles}>
-        Add
-      </button>
-      <button onClick={handleAnalyze} className={styles.buttonstyles}>
-        Analyze
-      </button>
-      <button onClick={clearSymptoms} className={styles.buttonstyles}>
-        Clear
-      </button>
-
-      <div>
-        {symptoms.length > 0 && <h2 style={{margin:"10px 0px 10px 0px"}}>These are your symptom(s):</h2>}
-        {symptoms.map((symptom, index) => (
-          <div key={index}>
-            <h2>{symptom}</h2>
-          </div>
-        ))}
+    <div className="parent-container">
+      <div className={`appear ${isAppearActive ? "active" : ""}`}>
+        <Image
+          className="logo-image"
+          src={Logo}
+          width={300}
+          height={150}
+          alt="logo"
+        />
+        <h1 className="home-title">Medifind</h1>
       </div>
-      <div style={{marginTop:"10px"}}>
+      <div className={`button-appear ${isButtonActive ? "active" : ""}`}>
+        <select
+          id="symptomDropdown"
+          value={selectedSymptom}
+          onChange={handleSymptomChange}
+          className={styles.select}
+        >
+          <option value="">Select...</option>
+          {symptomsData.symptoms.map((symptom, index) => (
+            <option key={index} value={symptom.name}>
+              {symptom.name}
+            </option>
+          ))}
+        </select>
+        <button onClick={handleAddSymptom} className={styles.buttonstyles}>
+          <AiOutlinePlus />
+        </button>
+        <button onClick={clearSymptoms} className={styles.buttonstyles}>
+          <BsTrash3 />
+        </button>
+        <button onClick={handleAnalyze} className={styles.buttonstyles}>
+          Analyze
+        </button>
+
+        <div className="symptoms-parent">
+          <h1>Symptoms</h1>
+          {symptoms.map((symptom, index) => (
+            <>
+              <div key={index} className="symptom-container">
+                <h2 className="symptom-header">{symptom}</h2>
+              </div>
+            </>
+          ))}
+        </div>
+      </div>
+      <div className={`disease-grid ${!areDiseasesVisible ? "appear" : ""}`}>
         {diseases.map((disease, index) => (
-          <div key={index}>
+          <div key={index} className={`disease-item ${areDiseasesVisible ? "appear":""}`}>
             <Link href={`/medications/${disease}`}>
               <h3>{disease}</h3>
             </Link>
@@ -140,6 +185,7 @@ export default function Home() {
             </button>
           </div>
         ))}
+                  <p>Be sure to consult your physician</p>
       </div>
     </div>
   );
