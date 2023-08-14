@@ -164,6 +164,7 @@ a {
 .home-title {
   font-size: 60px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
 }
 
 .logo-image {
@@ -194,6 +195,10 @@ a {
   transform: translateY(0);
 }
 
+.right-nav {
+  display: flex;
+  justify-content: end;
+}
 .symptoms-parent {
   background: black;
   border-radius: 5px;
@@ -202,6 +207,8 @@ a {
   width: 300px; /* Set your desired width */
   margin: 0 auto;
   border: 2px solid blue;
+  color: white;
+  margin-top: 10px;
 }
 
 .symptom-header {
@@ -275,6 +282,7 @@ a {
 .history-container {
   text-align: center;
   justify-content: center;
+  color:white
 }
 
 .history-header {

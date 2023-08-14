@@ -1,12 +1,29 @@
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+    color: white;
 }
 .inner {
     display:flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items:center;
     margin: 30px 30px 30px 0px;
-    background-color: yellow;
+}
+
+.outer {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px 10px 0px;
+}
+.content {
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    height: 80px;
+    border-radius: 10%;
 }

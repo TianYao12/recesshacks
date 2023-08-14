@@ -44,7 +44,7 @@ export default function Home() {
     if (isButtonActive) {
       const diseasesTimeout = setTimeout(() => {
         setAreDiseasesVisible(true);
-      }, 200); 
+      }, 200);
 
       return () => {
         clearTimeout(diseasesTimeout);
@@ -176,7 +176,10 @@ export default function Home() {
       </div>
       <div className={`disease-grid ${!areDiseasesVisible ? "appear" : ""}`}>
         {diseases.map((disease, index) => (
-          <div key={index} className={`disease-item ${areDiseasesVisible ? "appear":""}`}>
+          <div
+            key={index}
+            className={`disease-item ${areDiseasesVisible ? "appear" : ""}`}
+          >
             <Link href={`/medications/${disease}`}>
               <h3>{disease}</h3>
             </Link>
@@ -185,7 +188,7 @@ export default function Home() {
             </button>
           </div>
         ))}
-                  <p>Be sure to consult your physician</p>
+        <p style={{color:"white", marginBottom:"30px"}}>Be sure to consult your physician</p>
       </div>
     </div>
   );

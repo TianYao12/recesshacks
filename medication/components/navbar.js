@@ -37,6 +37,7 @@ export default function Navbar() {
               <Image src={Logo} width={50} height={25} alt="logo" />
             </Link>
           </div>
+          <div className="right-nav">
           <div className="navbar-container">
             <Link
               className="history-button"
@@ -61,6 +62,7 @@ export default function Navbar() {
             <Link className="history-button" href="/">
               {session.user.email}
             </Link>
+          </div>
           </div>
         </>
       )}

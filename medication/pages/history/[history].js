@@ -45,7 +45,7 @@ export default function Tracking() {
     <>
       <div className="history-container">
         <h1 className="history-header">Your History</h1>
-        <p className="para">Keep of your illness for future refrence</p>
+        <p className="para">Keep of your illness for future reference</p>
         {client &&
           comments.map((comment, index) => (
             <div className="disease-container" key={comment.id} index={index}>
